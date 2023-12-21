@@ -26,7 +26,7 @@ stand_UVMR<-function(expgwas,outgwas,Confounding_factor=T,confonding_name=NULL,c
       PhenoScan=PhenoScan$result
       #导出数据
       #return(PhenoScan)
-      path00<-paste0(path0,"PhenoScan.csv")
+      path00<-paste0(path0,"/PhenoScan.csv")
       write.csv(PhenoScan,file=path00)
     }
     if(n0==1){
@@ -35,6 +35,7 @@ stand_UVMR<-function(expgwas,outgwas,Confounding_factor=T,confonding_name=NULL,c
       PhenoScan<-rbind(PhenoScan1$result,PhenoScan2$result)
       #导出数据
       #return(PhenoScan)
+      path00<-paste0(path0,"/PhenoScan.csv")
       write.csv(PhenoScan,file=path00)
     }
     if(n0==2){
@@ -44,6 +45,7 @@ stand_UVMR<-function(expgwas,outgwas,Confounding_factor=T,confonding_name=NULL,c
       PhenoScan<-rbind(PhenoScan1$result,PhenoScan2$result,PhenoScan3$result)
       #导出数据
       #return(PhenoScan)
+      path00<-paste0(path0,"/PhenoScan.csv")
       write.csv(PhenoScan,file=path00)
     }
     if(n0==3){
@@ -65,6 +67,7 @@ stand_UVMR<-function(expgwas,outgwas,Confounding_factor=T,confonding_name=NULL,c
       PhenoScan<-rbind(PhenoScan1$result,PhenoScan2$result,PhenoScan3$result,PhenoScan4$result,PhenoScan5$result)
       #导出数据
       #return(PhenoScan)
+      path00<-paste0(path0,"/PhenoScan.csv")
       write.csv(PhenoScan,file=path00)
     }
     cat("请前往PhenoScan文件下查看混杂因素查询结果")
