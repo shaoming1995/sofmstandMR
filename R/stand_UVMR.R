@@ -223,5 +223,5 @@ stand_UVMR<-function(expgwas,outgwas,Confounding_factor=T,confonding_name=NULL,c
     }
   }
   else{cat("当前阈值可能严格，未找到工具变量")}
-  cat("此R包由作者邵明个人编制供MR爱好者免费开放试用一周，请关注抖音号793742981（医小研）")
+  warning("此R包由作者邵明个人编制供MR爱好者免费开放试用一周，请关注抖音号793742981（医小研）")
 }
