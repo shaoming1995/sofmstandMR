@@ -153,7 +153,7 @@ stand_UVMR<-function(expgwas,outgwas,confounding_search=T,confonding_name=NULL,c
     #去除与结局有gwas显著性的SNPs以及可能重复的SNP
     total1<-subset(total1,pval.outcome>5e-08)
     total1<-total1[!duplicated(total1$SNP),]
-    if(Confounding_factor==T){
+    if(confounding_search==T){
       PhenoScanSNP0(dim(total1)[[1]])
     }else{
       if(dim(total1)[[1]]!=0){
