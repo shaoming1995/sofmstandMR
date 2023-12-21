@@ -11,7 +11,6 @@
 #' @param confounding_search 是否查询混杂因素，默认是TURE
 #' @param confonding_name 输入需要去除的混杂因素
 #' @param pt 是否进行绘图，默认是TURE
-#'
 #' @export
 
 stand_UVMR<-function(expgwas,outgwas,confounding_search=T,confonding_name=NULL,clump_p1=5e-08,clump_r2=0.001,clump_kb=10000,pop="EUR",outfile="MR结果",steiger=T,Fvalue=T,pt=T){
