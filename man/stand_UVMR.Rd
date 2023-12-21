@@ -7,7 +7,7 @@
 stand_UVMR(
   expgwas,
   outgwas,
-  Confounding_factor = T,
+  confounding_search = T,
   confonding_name = NULL,
   clump_p1 = 5e-08,
   clump_r2 = 0.001,
@@ -24,7 +24,7 @@ stand_UVMR(
 
 \item{outgwas}{输入结局的GWAS摘要数据}
 
-\item{Confounding_factor}{是否先查看混杂因素，默认是TURE}
+\item{confounding_search}{是否查询混杂因素，默认是TURE}
 
 \item{confonding_name}{输入需要去除的混杂因素}
 
