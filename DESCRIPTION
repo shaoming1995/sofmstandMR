@@ -2,7 +2,7 @@ Package: sofmstandMR
 Title: What the Package Does (One Line, Title Case)
 Version: 0.23.12.22
 Authors@R: 
-person("ming", "shao", , "shaoming0928@163.com", role = c("aut", "cre"))
+person("ming", "shao", "shaoming0928@163.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
