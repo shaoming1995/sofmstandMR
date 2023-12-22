@@ -10,10 +10,11 @@
 #' @param Fvalue 是否计算F值，默认是TURE
 #' @param confounding_search 是否查询混杂因素，默认是TURE
 #' @param confonding_name 输入需要去除的混杂因素
+#' @param local_clump 是否启动本地聚类，默认是TURE
 #' @param pt 是否进行绘图，默认是TURE
 #' @export
 
-stand_UVMR<-function(expgwas,outgwas,confounding_search=T,confonding_name=NULL,clump_p1=5e-08,clump_r2=0.001,clump_kb=10000,pop="EUR",outfile="MR结果",steiger=T,Fvalue=T,pt=T){
+stand_UVMR<-function(expgwas,outgwas,confounding_search=T,local_clump=F,confonding_name=NULL,clump_p1=5e-08,clump_r2=0.001,clump_kb=10000,pop="EUR",outfile="MR结果",steiger=T,Fvalue=T,pt=T){
   PhenoScanSNP0<-function(N){
     if (!require("phenoscanner", quiet = TRUE))
       devtools::install_github("phenoscanner/phenoscanner")
@@ -142,8 +143,11 @@ stand_UVMR<-function(expgwas,outgwas,confounding_search=T,confonding_name=NULL,c
                   "beta.outcome","se.outcome","pval.outcome","id.outcome","outcome",
                   "samplesize.outcome")]
   expiv<-subset(EXP,pval.exposure<clump_p1)
-  expiv<- clump_data(expiv,clump_kb = clump_kb,clump_r2 = clump_r2,clump_p1 = 1,clump_p2 = 1,pop = pop)
-
+  if(local_clump==F){
+  expiv<- clump_data(expiv,clump_kb = clump_kb,clump_r2 = clump_r2,clump_p1 = 1,clump_p2 = 1,pop = pop)}else{
+  source("help502.R")
+  expiv<- local_clump_data(expiv,clump_kb = clump_kb,clump_r2 = clump_r2,pop = pop)
+  }
   if(Fvalue==T){
     expiv$R2<-expiv$beta.exposure*expiv$beta.exposure*2*(expiv$eaf.exposure)*(1-expiv$eaf.exposure)
     expiv$Fvalue<-(expiv$samplesize.exposure-2)*expiv$R2/(1-expiv$R2)
