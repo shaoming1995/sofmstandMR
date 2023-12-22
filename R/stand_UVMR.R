@@ -56,6 +56,7 @@ stand_UVMR<-function(expgwas,outgwas,confounding_search=T,confonding_name=NULL,c
       PhenoScan<-rbind(PhenoScan1$result,PhenoScan2$result,PhenoScan3$result,PhenoScan4$result)
       #导出数据
       # return(PhenoScan)
+      path00<-paste0(path0,"/PhenoScan.csv")
       write.csv(PhenoScan,file=path00)
     }
     if(n0==4){
