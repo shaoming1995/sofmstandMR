@@ -2,5 +2,8 @@
 
 export(finn_read_data)
 export(giant_read_data)
-export(stand_UVMR)
+export(stand_UVMR_IEU_IEU)
+export(stand_UVMR_IEU_local)
+export(stand_UVMR_local_IEU)
+export(stand_UVMR_local_local)
 export(yancao_read_data)
